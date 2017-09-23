@@ -15,4 +15,12 @@ colourDisplay.textContent = choosenColour;
 
 for(var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colours[i];
+  squares[i].addEventListener("click", function(){
+    var clickedColour = this.style.backgroundColor;
+    if(clickedColour === choosenColour){
+      alert("Correct!");
+    } else {
+      alert("Try again")
+    }
+  })
 }
