@@ -2,9 +2,10 @@ body {
   background-color: #232323;
 }
 
-h1 {
+h1, h2 {
   color: white;
 }
+
 #container {
   margin: 0 auto;
   max-width: 600px;

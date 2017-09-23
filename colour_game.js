@@ -8,6 +8,10 @@ var colours = [
 ]
 
 var squares = document.querySelectorAll(".square");
+var choosenColour = colours[2];
+var colourDisplay = document.querySelector("#colourDisplay");
+
+colourDisplay.textContent = choosenColour;
 
 for(var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colours[i];
