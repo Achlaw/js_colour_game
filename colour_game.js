@@ -3,9 +3,22 @@ var squares = document.querySelectorAll(".square");
 var choosenColour = chooseColour();
 var colourDisplay = document.querySelector("#colourDisplay");
 var messageDisplay = document.querySelector("#messageDisplay");
-var h1 = document.querySelector("h1");
+var h2 = document.querySelector("h2");
+var resetBtn = document.querySelector("#reset");
 
 colourDisplay.textContent = choosenColour;
+
+resetBtn.addEventListener("click", function(){
+  colours = generateRandomColour(6);
+  choosenColour = chooseColour();
+  colourDisplay.textContent = choosenColour;
+  for(var i = 0; i < squares.length; i++){
+  squares[i].style.backgroundColor = colours[i];
+  }
+  h2.style.backgroundColor = "#232323";
+  this.textContent = "Reset";
+  messageDisplay.textContent = "";
+});
 
 for(var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colours[i];
@@ -14,7 +27,8 @@ for(var i = 0; i < squares.length; i++){
     if(clickedColour === choosenColour){
       messageDisplay.textContent = "Correct!";
       changeColour(clickedColour);
-      h1.style.backgroundColor = clickedColour;
+      h2.style.backgroundColor = clickedColour;
+      resetBtn.textContent = "Play again?"
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent = "Try again!";
