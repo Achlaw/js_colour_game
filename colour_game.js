@@ -20,9 +20,16 @@ for(var i = 0; i < squares.length; i++){
     var clickedColour = this.style.backgroundColor;
     if(clickedColour === choosenColour){
       messageDisplay.textContent = "Correct!";
+      changeColour(clickedColour);
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent = "Try again!";
     }
   });
+}
+
+function changeColour(colour){
+  for(var i = 0; i < squares.length; i++){
+    squares[i].style.backgroundColor = colour;
+  }
 }
