@@ -8,7 +8,7 @@ var colours = [
 ]
 
 var squares = document.querySelectorAll(".square");
-var choosenColour = colours[2];
+var choosenColour = chooseColour();
 var colourDisplay = document.querySelector("#colourDisplay");
 var messageDisplay = document.querySelector("#messageDisplay");
 
@@ -26,6 +26,11 @@ for(var i = 0; i < squares.length; i++){
       messageDisplay.textContent = "Try again!";
     }
   });
+}
+
+function chooseColour(){
+  var random = Math.floor(Math.random() * colours.length);
+  return colours[random];
 }
 
 function changeColour(colour){
