@@ -18,6 +18,10 @@ h1, h2 {
   color: black;
 }
 
+.selected {
+  background-color: #232323;
+  color: white;
+}
 .square {
   width: 30%;
   background-color: blue;
