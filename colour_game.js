@@ -40,6 +40,13 @@ easyBtn.addEventListener("click", function(){
 hardBtn.addEventListener("click", function(){
   easyBtn.classList.remove("selected");
   hardBtn.classList.add("selected");
+  colours = generateRandomColour(6);
+  choosenColour = chooseColour();
+  colourDisplay.textContent = choosenColour;
+  for(var i = 0; i < squares.length; i++){
+      squares[i].style.backgroundColor = colours[i];
+      squares[i].style.display = "block";
+  }
 });
 
 for(var i = 0; i < squares.length; i++){
