@@ -6,8 +6,7 @@ var colourDisplay = document.querySelector("#colourDisplay");
 var messageDisplay = document.querySelector("#messageDisplay");
 var h2 = document.querySelector("h2");
 var resetBtn = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easy");
-var hardBtn = document.querySelector("#hard");
+var modeBtn = document.querySelectorAll(".mode");
 
 colourDisplay.textContent = choosenColour;
 
@@ -23,34 +22,65 @@ resetBtn.addEventListener("click", function(){
   messageDisplay.textContent = "";
 });
 
-easyBtn.addEventListener("click", function(){
-  hardBtn.classList.remove("selected");
-  easyBtn.classList.add("selected");
-  squareLimit = 3;
+for(var i = 0; i < modeBtn.length; i++){
+  modeBtn[i].addEventListener("click", function(){
+    modeBtn[0].classList.remove("selected");
+    modeBtn[1].classList.remove("selected");
+    this.classList.add("selected");
+    if(this.textContent === "Easy"){
+      squareLimit = 3;
+    } else {
+      squareLimit = 6;
+    }
+    reset();
+  });
+}
+
+function reset(){
   colours = generateRandomColour(squareLimit);
   choosenColour = chooseColour();
   colourDisplay.textContent = choosenColour;
   for(var i = 0; i < squares.length; i++){
     if(colours[i]){
+      squares[i].style.display = "block";
       squares[i].style.backgroundColor = colours[i];
     } else {
       squares[i].style.display = "none";
     }
   }
-});
+  h2.style.backgroundColor = "#232323";
+  resetBtn.textContent = "Reset";
+  messageDisplay.textContent = "";
+}
 
-hardBtn.addEventListener("click", function(){
-  easyBtn.classList.remove("selected");
-  hardBtn.classList.add("selected");
-  squareLimit = 6;
-  colours = generateRandomColour(squareLimit);
-  choosenColour = chooseColour();
-  colourDisplay.textContent = choosenColour;
-  for(var i = 0; i < squares.length; i++){
-      squares[i].style.backgroundColor = colours[i];
-      squares[i].style.display = "block";
-  }
-});
+// easyBtn.addEventListener("click", function(){
+//   hardBtn.classList.remove("selected");
+//   easyBtn.classList.add("selected");
+//   squareLimit = 3;
+//   colours = generateRandomColour(squareLimit);
+//   choosenColour = chooseColour();
+//   colourDisplay.textContent = choosenColour;
+//   for(var i = 0; i < squares.length; i++){
+//     if(colours[i]){
+//       squares[i].style.backgroundColor = colours[i];
+//     } else {
+//       squares[i].style.display = "none";
+//     }
+//   }
+// });
+
+// hardBtn.addEventListener("click", function(){
+//   easyBtn.classList.remove("selected");
+//   hardBtn.classList.add("selected");
+//   squareLimit = 6;
+//   colours = generateRandomColour(squareLimit);
+//   choosenColour = chooseColour();
+//   colourDisplay.textContent = choosenColour;
+//   for(var i = 0; i < squares.length; i++){
+//       squares[i].style.backgroundColor = colours[i];
+//       squares[i].style.display = "block";
+//   }
+// });
 
 for(var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colours[i];
