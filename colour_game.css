@@ -1,9 +1,17 @@
 body {
   background-color: #232323;
+  margin: 0;
+  font-family: "helvetica";
 }
 
 h1, h2 {
   color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1;
+  padding: 20px 0;
 }
 
 #container {
@@ -28,4 +36,8 @@ h1, h2 {
   padding-bottom: 30%;
   float: left;
   margin: 1.66%;
+}
+
+#colourDisplay {
+  font-size: 200%;
 }
