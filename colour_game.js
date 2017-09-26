@@ -5,6 +5,8 @@ var colourDisplay = document.querySelector("#colourDisplay");
 var messageDisplay = document.querySelector("#messageDisplay");
 var h2 = document.querySelector("h2");
 var resetBtn = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easy");
+var hardBtn = document.querySelector("#hard");
 
 colourDisplay.textContent = choosenColour;
 
@@ -18,6 +20,16 @@ resetBtn.addEventListener("click", function(){
   h2.style.backgroundColor = "#232323";
   this.textContent = "Reset";
   messageDisplay.textContent = "";
+});
+
+easyBtn.addEventListener("click", function(){
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+});
+
+hardBtn.addEventListener("click", function(){
+  easyBtn.classList.remove("selected");
+  hardBtn.classList.add("selected");
 });
 
 for(var i = 0; i < squares.length; i++){
