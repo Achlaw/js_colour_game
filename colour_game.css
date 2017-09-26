@@ -56,4 +56,10 @@ button {
   font-weight: 700;
   font-size: inherit;
   letter-spacing: 2px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background: #232323;
+  color: white;
 }
