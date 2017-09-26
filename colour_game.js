@@ -1,4 +1,5 @@
-var colours = generateRandomColour(6);
+var squareLimit = 6;
+var colours = generateRandomColour(squareLimit);
 var squares = document.querySelectorAll(".square");
 var choosenColour = chooseColour();
 var colourDisplay = document.querySelector("#colourDisplay");
@@ -11,7 +12,7 @@ var hardBtn = document.querySelector("#hard");
 colourDisplay.textContent = choosenColour;
 
 resetBtn.addEventListener("click", function(){
-  colours = generateRandomColour(6);
+  colours = generateRandomColour(squareLimit);
   choosenColour = chooseColour();
   colourDisplay.textContent = choosenColour;
   for(var i = 0; i < squares.length; i++){
@@ -25,7 +26,8 @@ resetBtn.addEventListener("click", function(){
 easyBtn.addEventListener("click", function(){
   hardBtn.classList.remove("selected");
   easyBtn.classList.add("selected");
-  colours = generateRandomColour(3);
+  squareLimit = 3;
+  colours = generateRandomColour(squareLimit);
   choosenColour = chooseColour();
   colourDisplay.textContent = choosenColour;
   for(var i = 0; i < squares.length; i++){
@@ -40,7 +42,8 @@ easyBtn.addEventListener("click", function(){
 hardBtn.addEventListener("click", function(){
   easyBtn.classList.remove("selected");
   hardBtn.classList.add("selected");
-  colours = generateRandomColour(6);
+  squareLimit = 6;
+  colours = generateRandomColour(squareLimit);
   choosenColour = chooseColour();
   colourDisplay.textContent = choosenColour;
   for(var i = 0; i < squares.length; i++){
