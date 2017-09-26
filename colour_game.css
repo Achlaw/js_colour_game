@@ -41,3 +41,19 @@ h1, h2 {
 #colourDisplay {
   font-size: 200%;
 }
+
+#messageDisplay {
+  display: inline-block;
+  width: 10%;
+}
+
+button {
+  border: none;
+  background: none;
+  height: 100%;
+  text-transform: uppercase;
+  color: #232323;
+  font-weight: 700;
+  font-size: inherit;
+  letter-spacing: 2px;
+}
